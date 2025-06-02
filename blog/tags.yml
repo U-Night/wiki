@@ -1,7 +1,7 @@
-facebook:
-  label: Facebook
-  permalink: /facebook
-  description: Facebook tag description
+improvement:
+  label: Improvement
+  permalink: /improvement
+  description: Improvement made to the game
 
 hello:
   label: Hello

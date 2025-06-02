@@ -1,25 +1,57 @@
-yangshun:
-  name: Yangshun Tay
-  title: Ex-Meta Staff Engineer, Co-founder GreatFrontEnd
-  url: https://linkedin.com/in/yangshun
-  image_url: https://github.com/yangshun.png
+neyzzo:
+  name: NeyZzO - Eliott
+  title: Core team - Game Dev
+  url: https://neyzzo.github.io
+  image_url: https://github.com/NeyZzO.png
   page: true
   socials:
-    x: yangshunz
-    linkedin: yangshun
-    github: yangshun
-    newsletter: https://www.greatfrontend.com
+    github: NeyZzO
+    discord: https://discord.gg/MsdqPNFJvW
 
-slorber:
-  name: Sébastien Lorber
-  title: Docusaurus maintainer
-  url: https://sebastienlorber.com
-  image_url: https://github.com/slorber.png
+rickola:
+  name: Rickola - Pierrick
+  title: Core team - Game Dev
+  url: https://github.com/Rickolaa/
+  image_url: https://github.com/Rickolaa.png
   page:
     # customize the url of the author page at /blog/authors/<permalink>
-    permalink: '/all-sebastien-lorber-articles'
+    permalink: '/rickolaa'
   socials:
-    x: sebastienlorber
-    linkedin: sebastienlorber
-    github: slorber
-    newsletter: https://thisweekinreact.com
+    github: Rickolaa
+
+screan:
+  name: Screan - Lucas
+  title: Core team - Game Dev & Sound Design
+  url: https://ScreanDev.github.io/
+  image_url: https://github.com/ScreanDev.png
+  page:
+    permalink: '/screan'
+  socials:
+    github: ScreanDev
+
+soupe:
+  name: Soupe - Otman
+  title: Core team - Game Dev & Pixel artist
+  url: https://github.com/Soupexo
+  image_url: https://github.com/Soupexo.png
+  page: true
+  socials:
+    github: Soupexo
+
+ddvur:
+  name: ddvur - Liam
+  title: Core team - Game Dev
+  url: https://ddvur.github.io
+  image_url: https://github.com/ddvur.png
+  page: true
+  socials:
+    github: ddvur
+
+gabycretin:
+  name: Gabycretin - Gabriel
+  title: Core team - Game Dev
+  url: https://github.com/Gabycretin
+  image_url: https://github.com/Gabycretin.png
+  page: true
+  socials:
+    github: Gabycretin
