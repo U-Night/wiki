@@ -1,30 +1,254 @@
-/**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
- */
+/* Importation de polices Google Fonts */
+/* "Press Start 2P" est très pixel art mais pas toujours facile à lire. */
+/* "VT323" ou "IBM Plex Mono" sont de bonnes alternatives pour le corps du texte. */
+/* Ici, on va utiliser "Pixelify Sans" pour les titres et "Roboto Mono" pour le texte courant */
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap');
 
-/* You can override the default Infima variables here. */
+/* --- Variables de Couleurs Thème Sombre & Post-Apocalyptique --- */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
-  --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  /* Mode clair par défaut (bien que nous forcions le sombre) */
+  --ifm-color-primary: #A3877A; /* Couleur dominante : Rouille/Terre abîmée */
+  --ifm-color-primary-dark: #8C6A5A;
+  --ifm-color-primary-darker: #7A5C4F;
+  --ifm-color-primary-darkest: #6B4F42;
+  --ifm-color-primary-light: #BFAD9E;
+  --ifm-color-primary-lighter: #D6C9BF;
+  --ifm-color-primary-lightest: #EDE6E0;
+
+  /* Accent secondaire (pour les éléments interactifs ou les points clés) */
+  --ifm-color-secondary: #4A5B4A; /* Un vert militaire/terne */
+  --ifm-color-secondary-dark: #3B4B3B;
+  --ifm-color-secondary-light: #5C6E5C;
+
+  /* Couleurs de texte */
+  --ifm-font-color-base: #E0E0E0; /* Texte principal très clair sur fond sombre */
+  --ifm-font-color-secondary: #B0B0B0; /* Texte secondaire, légendes */
+  --ifm-link-color: var(--ifm-color-primary-light); /* Couleur des liens */
+  --ifm-link-hover-color: var(--ifm-color-primary-lighter); /* Survol des liens */
+
+  /* Couleurs de fond */
+  --ifm-background-color: #202020; /* Fond principal très sombre */
+  --ifm-code-background: #1A1A1A; /* Fond des blocs de code */
+  --ifm-background-surface-color: #2D2D2D; /* Arrière-plan des cartes/composants */
+
+  /* Bordures et ombres */
+  --ifm-border-color: #404040;
+  --ifm-hover-overlay: rgba(255, 255, 255, 0.08);
+  --ifm-contents-sidebar-border-color: var(--ifm-border-color);
+  --ifm-global-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); /* Ombre générale pour donner du relief */
+
+  /* Couleurs d'état (info, warning, danger, success) - désaturées */
+  --ifm-color-info: #6A7E8C;    /* Bleu désaturé */
+  --ifm-color-warning: #B3884D; /* Jaune/orange terne */
+  --ifm-color-danger: #8C4A4A;  /* Rouge sombre */
+  --ifm-color-success: #5A7A5A; /* Vert sombre */
+
+  /* --- Typographie --- */
+  --ifm-font-family-base: 'Roboto Mono', monospace; /* Texte courant, facile à lire */
+  --ifm-font-family-monospace: 'Roboto Mono', monospace; /* Pour les codes */
+
+  /* Polices pour les titres (plus de caractère) */
+  --ifm-h1-font-family: 'Pixelify Sans', cursive;
+  --ifm-h2-font-family: 'Pixelify Sans', cursive;
+  --ifm-h3-font-family: 'Pixelify Sans', cursive;
+  --ifm-h4-font-family: 'Roboto Mono', monospace; /* Les sous-titres moins pixelisés */
+  --ifm-h5-font-family: 'Roboto Mono', monospace;
+  --ifm-h6-font-family: 'Roboto Mono', monospace;
+
+  /* Taille des titres (tu peux les ajuster) */
+  --ifm-h1-font-size: 2.8rem;
+  --ifm-h2-font-size: 2.2rem;
+  --ifm-h3-font-size: 1.8rem;
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+/* --- Forcer le thème sombre par défaut --- */
+html[data-theme='light'] {
+  /* Surcharger les variables du mode clair pour qu'elles ressemblent au mode sombre */
+  /* C'est une astuce pour s'assurer que même si Docusaurus pense être en mode clair,
+     il utilise nos couleurs sombres. Le bouton de toggle fonctionnera toujours. */
+  --ifm-color-primary: #A3877A;
+  --ifm-color-primary-dark: #8C6A5A;
+  --ifm-background-color: #202020;
+  --ifm-font-color-base: #E0E0E0;
+  --ifm-background-surface-color: #2D2D2D;
+  --ifm-navbar-background-color: #1A1A1A; /* Pour le header */
+  --ifm-footer-background-color: #1A1A1A; /* Pour le footer */
+  --ifm-menu-color-active: var(--ifm-color-primary-light); /* Couleur du menu actif */
+  --ifm-toc-border-color: var(--ifm-border-color); /* Bordure de la table des matières */
+  /* Continue à surcharger toutes les variables du mode clair si nécessaire */
+}
+
+/* --- Styles Généraux du Corps et Arrière-plan --- */
+body {
+  background-color: var(--ifm-background-color);
+  color: var(--ifm-font-color-base);
+  /* Optionnel : ajouter une texture de fond subtile pour l'ambiance apocalyptique */
+  /* Assure-toi d'avoir une image comme 'static/img/distress-texture.png' */
+  /* background-image: url('/img/distress-texture.png'); */
+  /* background-repeat: repeat; */
+  /* background-size: 200px; /* Taille de répétition de la texture */
+  /* opacity: 0.1; */ /* Pour que la texture soit très subtile */
+  /* filter: grayscale(100%); */ /* Pour la désaturer si besoin */
+}
+
+/* --- Header (Navbar) --- */
+.navbar {
+  background-color: #1A1A1A; /* Un noir plus profond pour le header */
+  border-bottom: 1px solid var(--ifm-color-primary-dark); /* Bordure rouillée */
+  box-shadow: var(--ifm-global-shadow);
+}
+
+.navbar__title, .navbar__link {
+  color: var(--ifm-font-color-base);
+}
+
+.navbar__brand {
+  font-family: var(--ifm-h1-font-family); /* Le titre du site dans la police pixelisée */
+  font-size: var(--ifm-h2-font-size);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Ombre pour les titres */
+}
+
+.navbar__toggle {
+  color: var(--ifm-font-color-base); /* Couleur de l'icône du menu burger */
+}
+
+/* --- Contenu Principal --- */
+.main-wrapper {
+  background-color: transparent; /* Pas de fond ici, on laisse le body gérer */
+}
+
+.docMainContainer {
+  background-color: var(--ifm-background-surface-color); /* Fond pour la zone de contenu */
+  border-radius: 8px;
+  box-shadow: var(--ifm-global-shadow);
+  padding: 2rem;
+  margin: 20px; /* Marge autour du bloc de contenu principal */
+  border: 1px solid var(--ifm-border-color);
+}
+
+/* --- Sidebar de Navigation (Docs) --- */
+.theme-doc-sidebar-container {
+  background-color: var(--ifm-background-surface-color); /* Fond de la sidebar */
+  border-right: 1px solid var(--ifm-contents-sidebar-border-color);
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.4);
+  border-radius: 0 8px 8px 0; /* Arrondi sur le côté droit */
+}
+
+.menu__link {
+  color: var(--ifm-font-color-secondary);
+}
+
+.menu__link--active, .menu__link:hover {
+  background-color: var(--ifm-color-primary-darkest); /* Fond rouille foncé au survol/actif */
+  color: var(--ifm-color-primary-lightest); /* Texte clair */
+}
+
+.menu__link--active {
+  font-weight: bold;
+  border-left: 3px solid var(--ifm-color-primary); /* Barre latérale de la couleur principale */
+  padding-left: calc(var(--ifm-menu-link-padding-horizontal) - 3px); /* Ajustement padding */
+}
+
+/* --- Titres des Pages et Sections --- */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--ifm-color-primary-lightest); /* Titres plus clairs */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+  border-bottom: 1px dashed rgba(var(--ifm-color-primary-rgb), 0.3); /* Ligne pointillée rouillée */
+  padding-bottom: 5px;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+h1 { font-size: var(--ifm-h1-font-size); }
+h2 { font-size: var(--ifm-h2-font-size); }
+h3 { font-size: var(--ifm-h3-font-size); }
+h4 { font-size: var(--ifm-h4-font-size); }
+
+/* --- Blocs de Code --- */
+code {
+  background-color: var(--ifm-code-background);
+  border-radius: 4px;
+  padding: 0.2em 0.4em;
+  font-family: var(--ifm-font-family-monospace);
+  color: #B0B0B0; /* Texte de code clair */
+}
+
+pre {
+  background-color: var(--ifm-code-background);
+  border: 1px solid var(--ifm-border-color);
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.4);
+  border-radius: 8px;
+  padding: 1rem;
+  overflow: auto;
+}
+
+/* --- Liens --- */
+a {
+  color: var(--ifm-link-color);
+  text-decoration: none; /* Pas de soulignement par défaut */
+  transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+  color: var(--ifm-link-hover-color);
+  text-decoration: underline; /* Soulignement au survol */
+}
+
+/* --- Admonitions (Info, Warning, Danger, etc.) --- */
+.admonition {
+  border-left: 5px solid var(--ifm-color-primary);
+  background-color: rgba(var(--ifm-color-primary-rgb), 0.1);
+  border-radius: 5px;
+  padding: 1rem;
+  margin: 1.5rem 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.admonition-note { border-left-color: var(--ifm-color-info); background-color: rgba(var(--ifm-color-info-rgb), 0.1); }
+.admonition-tip { border-left-color: var(--ifm-color-success); background-color: rgba(var(--ifm-color-success-rgb), 0.1); }
+.admonition-danger { border-left-color: var(--ifm-color-danger); background-color: rgba(var(--ifm-color-danger-rgb), 0.1); }
+.admonition-warning { border-left-color: var(--ifm-color-warning); background-color: rgba(var(--ifm-color-warning-rgb), 0.1); }
+
+.admonition-heading {
+  font-family: var(--ifm-h4-font-family); /* Titre de l'admonition dans la police choisie */
+  font-weight: bold;
+  text-transform: uppercase;
+  color: var(--ifm-font-color-base);
+}
+
+/* --- Footer --- */
+.footer {
+  background-color: #1A1A1A; /* Même fond que le header pour cohérence */
+  border-top: 1px solid var(--ifm-color-primary-dark);
+  color: var(--ifm-font-color-secondary);
+  font-size: 0.9em;
+  padding: 2rem 0;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.footer__link-item {
+  color: var(--ifm-font-color-secondary);
+}
+
+.footer__link-item:hover {
+  color: var(--ifm-link-hover-color);
+}
+
+/* --- Personnalisation du Scrollbar (pour un look plus "mécanique") --- */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+::-webkit-scrollbar-track {
+  background: var(--ifm-background-color);
+  border-radius: 10px;
+  border: 1px solid var(--ifm-border-color); /* Petite bordure autour de la piste */
+}
+::-webkit-scrollbar-thumb {
+  background: var(--ifm-color-primary-dark);
+  border-radius: 10px;
+  border: 3px solid var(--ifm-background-color);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ifm-color-primary);
 }
