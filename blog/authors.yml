@@ -13,9 +13,7 @@ rickola:
   title: Core team - Game Dev
   url: https://github.com/Rickolaa/
   image_url: https://github.com/Rickolaa.png
-  page:
-    # customize the url of the author page at /blog/authors/<permalink>
-    permalink: '/rickolaa'
+  page: true
   socials:
     github: Rickolaa
 
@@ -24,8 +22,7 @@ screan:
   title: Core team - Game Dev & Sound Design
   url: https://ScreanDev.github.io/
   image_url: https://github.com/ScreanDev.png
-  page:
-    permalink: '/screan'
+  page: true
   socials:
     github: ScreanDev
 
