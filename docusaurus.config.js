@@ -26,7 +26,7 @@ const config = {
   url: 'https://u-night.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: '/wiki',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -117,7 +117,7 @@ const config = {
             items: [
               {
                 label: 'Wiki',
-                to: '/docs/intro',
+                to: '/intro',
               },
             ],
           },
@@ -134,7 +134,7 @@ const config = {
               },
               {
                 label: 'Forum',
-                href: '#',
+                href: 'https://forum.u-night.org',
               },
             ],
           },
@@ -142,17 +142,17 @@ const config = {
             title: 'Other',
             items: [
               {
-                label: 'Blog',
-                to: '/blog',
+                label: 'DevLog',
+                to: '/devlog',
               },
               {
                 label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                href: 'https://github.com/U-Night',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} U-Night. Built with Docusaurus.`,
       },
       prism: {
         theme: prismThemes.github,
