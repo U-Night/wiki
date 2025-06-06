@@ -1,0 +1,18 @@
+
+.team-members{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.team-member {
+    flex: 0 0 calc(98% / 3);
+    box-sizing: border-box;
+    border-radius: 8px;
+    width: fit-content;
+    padding: 1rem 2rem;
+    align-content: center;
+    text-align: center;
+    :hover {
+        background-color: rgba(255, 255, 255, 0.431);
+    }
+}
