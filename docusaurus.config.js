@@ -55,6 +55,8 @@ const config = {
           // Remove this to remove the "edit this page" links.
           editUrl:
             'https://github.com/U-Night/wiki/tree/main',
+          
+          routeBasePath: "/"
         },
         blog: {
           showReadingTime: true,
@@ -68,6 +70,7 @@ const config = {
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
           onUntruncatedBlogPosts: 'warn',
+          routeBasePath: "/devlog",
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -82,11 +85,11 @@ const config = {
       // Replace with your project's social card
       // image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'U-Night',
-        // logo: {
-        //   alt: 'U-Night Logo',
-        //   src: 'img/logo.svg',
-        // },
+        // title: 'U-Night',
+        logo: {
+          alt: 'U-Night Logo',
+          src: 'img/unight_blanc.webp',
+        },
         items: [
           {
             type: 'docSidebar',
@@ -95,7 +98,7 @@ const config = {
             label: 'Wiki',
           },
           {
-            href: '/blog',
+            href: '/devlog',
             label: 'DevLog',
             position: 'left',
           },
