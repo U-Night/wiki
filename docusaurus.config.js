@@ -33,6 +33,10 @@ const config = {
   organizationName: 'U-Night', // Usually your GitHub org/user name.
   projectName: 'wiki', // Usually your repo name.
 
+  deploymentBranch: 'gh-pages',
+
+  trailingSlash: false,
+
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
