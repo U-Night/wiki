@@ -30,7 +30,7 @@ export default function TeamMember({ userName, displayName, title, pageLink, soc
       placeContent: 'space-around',
     }}>
       {Object.entries(socials).map(([key, value]) => 
-        <a href={value} key={key}>{icons[key] || <Globe/>}</a>
+        <a href={value} key={key} target="_blank">{icons[key] || <Globe/>}</a>
       )}
     </div>
 

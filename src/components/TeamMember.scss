@@ -12,7 +12,13 @@
     padding: 1rem 2rem;
     align-content: center;
     text-align: center;
-    :hover {
-        background-color: rgba(255, 255, 255, 0.431);
+    cursor: pointer;
+    
+    &:hover {
+        background-color: rgba(255, 255, 255, 0.137);
+
+        p,h4 {
+            text-decoration: underline;
+        }
     }
 }
