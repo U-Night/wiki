@@ -163,6 +163,31 @@ const config = {
         darkTheme: prismThemes.dracula,
       },
     }),
+
+    headTags: [
+      {
+        tagName: 'link',
+        attributes: {
+          rel: 'preconnect',
+          href: 'https://fonts.googleapis.com',
+        },
+      },
+      {
+        tagName: 'link',
+        attributes: {
+          rel: 'preconnect',
+          href: 'https://fonts.gstatic.com',
+          crossorigin: 'true',
+        },
+      },
+      {
+        tagName: 'link',
+        attributes: {
+          href: 'https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap',
+          rel: 'stylesheet',
+        },
+      },
+    ],
 };
 
 export default config;
