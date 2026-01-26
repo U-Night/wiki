@@ -11,12 +11,10 @@ const icons = {
   "twitter": <Twitter size={18}/>,
 }
 
-export default function TeamMember({ userName, displayName, title, pageLink, socials }) {
-  Object.entries(socials).map(([key, value]) => {
-    return console.log(key, value, icons[key]);
-  })
+export default function TeamMember({ userName, displayName, title, pageLink, socials, profilePic }) {
+  
   return <div className="team-member">
-    <img src={`https://github.com/${userName}.png`} alt={userName + ' image'} style={{borderRadius: "50%", width: "8rem"}}/>
+    <img src={profilePic ?? `https://github.com/${userName}.png`} alt={userName + ' profile picture'} style={{borderRadius: "50%", width: "8rem"}}/>
     <a href={pageLink}>
         <h4 style={{
         padding: 0,
